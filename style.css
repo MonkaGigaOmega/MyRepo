@@ -12,6 +12,54 @@
   background-color: antiquewhite;
 }
 
+.body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.reload-wrapper {
+  display: block;
+  position: relative;
+  left: -3px;
+  width: 40px;
+  height: 40px;
+  transition: rotate 0.4s ease;
+}
+.reload-wrapper::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-image: url(./icons/reset-25.svg);
+  background-position: center;
+}
+
+.menu {
+  display: none;
+  width: 100px;
+  height: 100%;
+  background-color: rgb(191, 193, 185);
+}
+.menu__text {
+  margin: 5px auto;
+  text-align: center;
+}
+.menu__button {
+  width: 50px;
+  height: 50px;
+  margin: 5px auto 15px auto;
+  border-radius: 15px;
+  border: none;
+  border: 1px solid lightsalmon;
+  background-color: aliceblue;
+  transition: background-color 0.4s ease;
+}
+.menu__button:hover {
+  background-color: rgb(253, 255, 240);
+}
+.menu__button:active {
+  background-color: rgb(174, 248, 248);
+}
 .first-row {
   display: flex;
   flex-wrap: wrap;
@@ -78,7 +126,7 @@
 .second-row-first {
   background-color: white;
   box-shadow: inset 0px -70px blue;
-  transition: background-color, box-shadow 1s ease-in;
+  transition: background-color, box-shadow 0.7s ease-in;
 }
 .second-row-first:hover {
   background-color: blue;
@@ -135,8 +183,14 @@
 .third-row-second {
   transition: transform 0.5s ease;
 }
+.third-row-second:hover {
+  background-color: rgb(231, 231, 231);
+}
 .third-row-third {
   transition: transform 0.5s ease;
+}
+.third-row-third:hover {
+  background-color: rgb(231, 231, 231);
 }
 
 .fourth-row {
@@ -152,16 +206,19 @@
   font-weight: bold;
   background-color: rgb(232, 255, 85);
 }
-.fourth-row-first {
-  background-image: none;
+.fourth-row-first:hover {
+  background-color: rgb(243, 255, 151);
 }
-.fourth-row-second {
-  background-image: none;
+.fourth-row-second:hover {
+  background-color: rgb(242, 255, 161);
 }
 .fourth-row-third {
   position: relative;
   left: 0;
   transition: left 0.1s ease;
+}
+.fourth-row-third:hover {
+  background-color: rgb(239, 255, 150);
 }
 
 .fifth-row {
@@ -176,11 +233,11 @@
   font-size: 16px;
   font-weight: bold;
 }
-.fifth-row-first {
-  background-image: none;
+.fifth-row-first:hover {
+  background-color: rgb(230, 239, 255);
 }
-.fifth-row-second {
-  background-image: none;
+.fifth-row-second:hover {
+  background-color: rgb(232, 241, 255);
 }
 .fifth-row-third:hover {
   opacity: 0;
@@ -208,4 +265,15 @@
 
 .hard {
   transform-origin: 100% 50%;
+}
+
+@media (min-width: 1440px) {
+  .body {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=style.css.map */

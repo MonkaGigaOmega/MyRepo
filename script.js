@@ -1,5 +1,13 @@
 const JB = document.querySelector('.justButtons');
 const anyButton = document.querySelectorAll('.button');
+const reload = document.querySelector('.menu__button-first');
+const reloadStr = document.querySelector('.reload-wrapper')
+reload.addEventListener("click", function(){
+    reloadStr.style.rotate = 720+'deg';
+    setTimeout(() => {
+        location.reload();
+      }, 400);
+})
 // Три кнопки
 const TRfirst = document.querySelector('.third-row-first');
 TRfirst.addEventListener("click",function(){
