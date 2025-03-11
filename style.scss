@@ -3,16 +3,22 @@
     height:82px;
     border:none;
 }
+.All-buttons{
+    width:100%;
+}
 .justButtons{
     min-width:320px;
     width:100%;
-    min-height:720px;
-    height:100%;
-    background-color: antiquewhite;
+    min-height: 600px;
+    background-image: linear-gradient(rgb(226, 211, 148)60%,rgb(120, 118, 116) 79%,#191820 95%);
+    padding-bottom: 90px;
+}
+.NotjustButtons{
+    background-color: #191820;
 }
 .body{
-    height:100vh;
-    width:100vw;
+    height: 100%;
+    width: 100%;
 }
 .reload{
     &-wrapper{
@@ -21,7 +27,7 @@
     left:-3px;
     width:40px;
     height:40px;
-    transition: rotate 0.4s ease;
+    transition: rotate 0.2s ease;
     &::after{
         content: "";
         display: block;
@@ -35,8 +41,8 @@
 .menu{
     display: none;
     width:100px;
-    height:100%;
-    background-color: rgb(191, 193, 185);
+    height:100vh;
+    background-color: darkcyan;
     &__text{
         margin:5px auto;
         text-align: center;
@@ -48,7 +54,7 @@
         border-radius: 15px;
         border:none;
         border: 1px solid lightsalmon;
-        background-color: aliceblue;
+        background-color: rgb(227, 222, 222);
         transition: background-color 0.4s ease;
         &:hover{
             background-color: rgb(253, 255, 240);
@@ -266,6 +272,9 @@
 }
 .rotate{
     transform: rotate(360deg);
+    &-transition{
+        transition: rotate 60s ease-out !important;
+    }
 }
 .scale{
     transform: scaleX(1.8);
@@ -279,13 +288,76 @@
 .hard{
     transform-origin: 100% 50%;
 }
-@media (min-width:1440px){
+.first{
+    &-sigma{
+        &-row{
+            display:flex;
+            flex-wrap: wrap;
+            &-button{
+                margin:20px auto;
+                background-color: #191820;
+                border:none;
+                border-radius:15px;
+                box-shadow:5px 5px 15px 5px black,
+                -5px -5px 15px 0px rgb(134, 134, 134);
+                color: #ececec;
+                transition: all 0.2s ease;
+                font-size:20px;
+                &:hover{
+                    font-size:22px;
+                    color:whitesmoke;
+                }
+                &:active{
+                    box-shadow:inset 5px 5px 15px 5px black,
+                    inset -5px -5px 5px 0px black;
+                    font-size:21px;
+                }
+
+            }
+        }
+    }
+}
+.second{
+    &-sigma{
+        &-row{
+            display:flex;
+            flex-wrap: wrap;
+            &-button{
+                height:250px;
+                margin:20px auto;
+                background-color: #191820;
+                border:none;
+                border-radius:50%;
+                box-shadow:inset 5px 5px 15px 5px black,
+                    inset -5px -5px 5px 0px black;
+                color: #ececec;
+                transition: all 0.2s ease;
+                font-size:20px;
+                &:hover{
+                    color:whitesmoke;
+                    border:3px solid #ad8af7;
+                }
+                &:active{
+                    border:none;
+                    box-shadow:5px 5px 15px 10px rgb(65, 31, 31),
+                    -5px -5px 15px 5px rgb(251, 127, 255);
+                    font-size:23px;
+                    transform: scale(1.05);
+                }
+
+            }
+        }
+    }
+}
+@media (min-width:1366px){
 .body{
     display: flex;
     flex-direction: row-reverse;
 }
 .menu{
     display: flex;
+    position: fixed;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 }

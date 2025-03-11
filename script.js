@@ -3,10 +3,10 @@ const anyButton = document.querySelectorAll('.button');
 const reload = document.querySelector('.menu__button-first');
 const reloadStr = document.querySelector('.reload-wrapper')
 reload.addEventListener("click", function(){
-    reloadStr.style.rotate = 720+'deg';
+    reloadStr.style.rotate = 360+'deg';
     setTimeout(() => {
         location.reload();
-      }, 400);
+      }, 200);
 })
 // Три кнопки
 const TRfirst = document.querySelector('.third-row-first');
@@ -101,3 +101,32 @@ for(let pp = 0;pp<anyButton.length;pp++){
     anyButton[pp].style.rotate=Math.round(Math.random()*100) + 'deg';
     }
 });
+//сюда три стильных прямоугольных всуну
+
+// до сюда
+const morgenP = new Audio('sounds/morgenP.mp3');
+const ssrfButton = document.querySelector('.second-sigma-row-first')
+ssrfButton.addEventListener("click", function(){
+    morgenP.play()
+    for(let zzz = 0;zzz<anyButton.length;zzz++){
+        anyButton[zzz].style.rotate=Math.round(Math.random()*15000) + 'deg';
+        let currentButton = anyButton[zzz];
+        currentButton.classList.add('rotate-transition')
+        }
+    setTimeout(() => {
+        ssrfButton.textContent = 'Подсказка: выключается на другую кнопку'
+      }, 5000);
+})
+
+const ssrtButton = document.querySelector('.second-sigma-row-third')
+ssrtButton.addEventListener("click", function(){
+    morgenP.pause()
+    for(let zzz = 0;zzz<anyButton.length;zzz++){
+        anyButton[zzz].style.rotate=Math.round(Math.random()*5000) + 'deg';
+        let currentButton = anyButton[zzz];
+        currentButton.classList.remove('rotate-transition')
+        }
+        setTimeout(() => {
+            ssrtButton.textContent = 'Нажми кнопку СБРОСИТЬ в меню'
+          }, 500);
+})
