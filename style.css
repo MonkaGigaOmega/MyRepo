@@ -68,6 +68,7 @@
 .menu__button:active {
   background-color: rgb(174, 248, 248);
 }
+
 .first-row {
   display: flex;
   flex-wrap: wrap;

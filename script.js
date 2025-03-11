@@ -102,7 +102,25 @@ for(let pp = 0;pp<anyButton.length;pp++){
     }
 });
 //сюда три стильных прямоугольных всуну
-
+const fsrfButton = document.querySelector('.first-sigma-row-first');
+fsrfButton.addEventListener("click",function(){
+    const now = new Date();
+    fsrfButton.textContent = now.toLocaleTimeString();
+})
+const fsrsButton = document.querySelector('.first-sigma-row-second');
+fsrsButton.addEventListener("click",function(){
+    const now = new Date();
+    fsrsButton.textContent = now.toLocaleDateString();
+})
+const quotes = ["Не плохо когда ты один - плохо когда ты два",
+    "Волков боятся - волков боятся",
+    "Волк слабее льва и тигра, но в цирке не выступает"];
+const fsrtButton = document.querySelector('.first-sigma-row-third'); 
+fsrtButton.addEventListener("click",function(){
+    const randomQuote = Math.floor(Math.random()*quotes.length);
+    fsrtButton.textContent = quotes[randomQuote];
+    fsrtButton.classList.add('scale');
+}) 
 // до сюда
 const morgenP = new Audio('sounds/morgenP.mp3');
 const ssrfButton = document.querySelector('.second-sigma-row-first')
